@@ -1,0 +1,15 @@
+# This program takes in arguments the name of the files
+
+import sys
+
+old_string = "\n42"
+new_string = "\nWorked42:"
+
+for filename in sys.argv[1:]:
+    with open(filename, "r") as file:
+        content = file.read()
+
+    content = content.replace(old_string, new_string)
+
+    with open(filename, "w") as file:
+        file.write(content)
